@@ -3,10 +3,12 @@ import resume from '../../Assets/Resume.docx';
 
 export default function Portfolio() {
   return (
-    <div>
-      <h1>Resume
-      </h1>
-      <a href={resume} download>Click to download</a>
+    <div class="text-start">
+      <div class="text-center">      
+        <h1 >Resume</h1>
+        <a href={resume} download>Click to download</a>
+      </div>
+
 
       <h2>Summary of Qualifications</h2>
       <p>•	Denver University certification in full-stack development focusing on: HTML, CSS, JavaScript, NODE.JS, NOSQL, REACT</p>

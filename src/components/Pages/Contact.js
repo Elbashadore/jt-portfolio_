@@ -1,6 +1,12 @@
 import React ,{useState} from 'react';
 import { validateEmail } from '../../utils/helpers';
 
+let placeHolderEmail = 'Email';
+let placeHolderName = 'Name';
+let placeHolderMessage = 'Message';
+
+let errorStatus = ''
+
 
 
 function Form() {
@@ -9,7 +15,7 @@ function Form() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState({email: false, name: false, message:false });
+  const [errorMessage, setErrorMessage] = useState({email: false, name: false, message:false, submit:false, emailError: 'Email is required', nameError: 'Name is required',messageError:'Message is required' });
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -31,6 +37,12 @@ function Form() {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
+    if (errorMessage.name === true| errorMessage.email === true | errorMessage.message === true) {
+      setErrorMessage({...errorMessage,submit:true})
+      return
+    } else {setErrorMessage({...errorMessage,submit:false})}
+
+
 
 
 
@@ -38,13 +50,15 @@ function Form() {
     setName('');
     setEmail('');
     setMessage('');
+    placeHolderEmail = 'Email';
+    placeHolderName = 'Name';
+    placeHolderMessage = 'Message';
   };
 
   function validInput(e) {
    if( !e.target.value.length) {
      const field = e.target.name
      setErrorMessage({...errorMessage,[field]:true})
-     console.log(errorMessage.name)
    }
    else {const field = e.target.name
         setErrorMessage({...errorMessage,[field]:false})
@@ -52,37 +66,52 @@ function Form() {
   }
 
   return (
-    <div>
-      { errorMessage.email === true && <p>Email is required</p>}
-      <form className="form">
+    <div class="justify-content-center text-center">
+      <h1>Contact Form</h1>
+      <form className="form my-2">
         <input 
+        {...errorMessage.email &&(errorStatus="errorText")}
+        {...errorMessage.email === false && (errorStatus='')}
+        {...errorMessage.email &&(placeHolderEmail="Please enter an email")}
           onBlur={validInput}
           value={email}
           name="email"
           onChange={handleInputChange}
           type="email" required
-          placeholder="email"
+          placeholder={placeHolderEmail}
+          class={errorStatus}
         />
-        {errorMessage.name === true && <p>Name is required</p>}
         <input
+        {...errorMessage.name &&(errorStatus="errorText")}
+        {...errorMessage.name === false && (errorStatus='')}
+          {...errorMessage.name &&(placeHolderName="Please enter a name")}
           onBlur={validInput}
           value={name}
           name="name"
           onChange={handleInputChange}
           type="text" required
-          placeholder="Name"
+          placeholder={placeHolderName}
+          class={errorStatus}
         />
         <input
-        {...errorMessage.message === true && <p>Message is required</p>}
+        {...errorMessage.message &&(errorStatus="errorText")}
+        {...errorMessage.message === false && (errorStatus='')}
+          {...errorMessage.message &&(placeHolderMessage="Please enter a message")}
           onBlur={validInput}
           value={message}
           name="message"
           onChange={handleInputChange}
           type="text" required
-          placeholder="Message"
+          placeholder={placeHolderMessage}
+          class={errorStatus}
         />
         <button type="button" onClick={handleFormSubmit}>Submit</button>
       </form>
+      {errorMessage.submit &&(
+        <div>
+          <p className="error-text">Make sure all fields are filled out before submitting</p>
+        </div>
+      )}
     </div>
   );
 }
