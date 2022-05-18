@@ -27,7 +27,7 @@ export default function PortfolioContainer() {
   
     return (
       <div class="background">
-        <h1 class="">Josh Tibbetts</h1>
+        <h1 class="header">Josh Tibbetts</h1>
         {/* We are passing the currentPage from state and the function to update it */}
         <NavTabs currentPage={currentPage} handlePageChange={handlePageChange}/>
         {/* Here we are calling the renderPage method which will return a component  */}

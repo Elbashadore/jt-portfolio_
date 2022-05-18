@@ -66,7 +66,7 @@ function Form() {
   }
 
   return (
-    <div class="justify-content-center text-center">
+    <div class="justify-content-center text-center contactForm">
       <h1>Contact Form</h1>
       <form className="form my-2">
         <input 
