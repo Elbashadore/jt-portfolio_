@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b471c204.css",
+    "main.js": "/static/js/main.466c2b61.js",
+    "static/media/travelTrusteeV2.png": "/static/media/travelTrusteeV2.8c29e1d846b636fe3969.png",
+    "static/media/weatherdashboard.png": "/static/media/weatherdashboard.7d6e222e465b8f659471.png",
+    "static/media/Day Planner.png": "/static/media/Day Planner.fd5cb75cc5f784de7cdf.png",
+    "static/media/PFP.jpeg": "/static/media/PFP.c44ac003a638f329a508.jpeg",
+    "static/media/Password Generator.png": "/static/media/Password Generator.5c87a970723b0740c15a.png",
+    "static/media/JATE.png": "/static/media/JATE.0cc30d39fb68327b4f56.png",
+    "static/media/Resume.docx": "/static/media/Resume.0bec414c138fc1527761.docx",
+    "index.html": "/index.html",
+    "main.b471c204.css.map": "/static/css/main.b471c204.css.map",
+    "main.466c2b61.js.map": "/static/js/main.466c2b61.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b471c204.css",
+    "static/js/main.466c2b61.js"
+  ]
+}
