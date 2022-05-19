@@ -1,7 +1,7 @@
 import React from 'react';
 import twitter from '../Assets/Twitter.png';
 import github from '../Assets/Github.png';
-import linkedin from '../Assets/Linkedin.png';
+import linkedin from '../Assets/linkedin.png';
 
 export default function Footer() {
   return (
