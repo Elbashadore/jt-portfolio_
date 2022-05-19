@@ -71,7 +71,7 @@ function Form() {
       <form className="form my-2">
         <input 
         {...errorMessage.email &&(errorStatus="errorText")}
-        {...errorMessage.email === false && (errorStatus='')}
+        {...errorMessage.email === false && (errorStatus='backgroundTeal')}
         {...errorMessage.email &&(placeHolderEmail="Please enter an email")}
           onBlur={validInput}
           value={email}
@@ -83,7 +83,7 @@ function Form() {
         />
         <input
         {...errorMessage.name &&(errorStatus="errorText")}
-        {...errorMessage.name === false && (errorStatus='')}
+        {...errorMessage.name === false && (errorStatus='backgroundTeal')}
           {...errorMessage.name &&(placeHolderName="Please enter a name")}
           onBlur={validInput}
           value={name}
@@ -95,7 +95,7 @@ function Form() {
         />
         <input
         {...errorMessage.message &&(errorStatus="errorText")}
-        {...errorMessage.message === false && (errorStatus='')}
+        {...errorMessage.message === false && (errorStatus='backgroundTeal')}
           {...errorMessage.message &&(placeHolderMessage="Please enter a message")}
           onBlur={validInput}
           value={message}
@@ -105,7 +105,7 @@ function Form() {
           placeholder={placeHolderMessage}
           class={errorStatus}
         />
-        <button type="button" onClick={handleFormSubmit}>Submit</button>
+        <button type="button" class="backgroundRed" onClick={handleFormSubmit}>Submit</button>
       </form>
       {errorMessage.submit &&(
         <div>

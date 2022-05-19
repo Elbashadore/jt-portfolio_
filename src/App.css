@@ -1,8 +1,17 @@
+:root {
+    --grey:rgb(40, 38, 44);
+    --white:#E0D5D7;
+    --red:rgb(248, 118, 102);
+    --teal:rgb(98, 146, 158);
+    
+    }
+
 .header{
 }
 
 .errorText{
-    background-color:rgba(255, 99, 71, 0.6)
+    background-color:rgba(248, 118, 102, 0.6);
+
 }
 
 .img{
@@ -28,19 +37,66 @@
     margin-left:2px;
 }
 
-/* .background{
-    background-color:#615C5D;
-} */
-
-.colorScheme{
-    color: #E0D5D7;
+.background{
+    background-color:rgb(40, 38, 44);
+    color: var(--white);
 }
 
+.colorScheme{
+    color: var(--white);
+}
 
-.active{
-    background-color: #E67080;
+.textTeal{
+    color: var(--teal);
 }
 
 .contactForm{
     min-height: 500px;
+}
+
+.backgroundRed{
+    background-color: var(--red);
+}
+
+.backgroundTeal{
+    background-color: var(--teal);
+}
+
+.backgroundGrey{
+    background-color: var(--grey);
+}
+
+.cardBorder{
+    border:.5px solid var(--teal)
+}
+
+a:active{
+background-color: var(--red)
+}
+
+::placeholder{
+    color:var(--white);
+}
+
+h2{
+    color: var(--teal);
+}
+h3{
+    color:var(--red);
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--red) !important;
+}
+
+a:hover{
+    color: var(--red);
+}
+
+a{
+    color: var(--teal);
+}
+
+.hover:hover{
+    color: var(--red);
 }
